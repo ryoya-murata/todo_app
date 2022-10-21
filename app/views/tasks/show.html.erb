@@ -7,5 +7,11 @@
 <p><%= @task.content %></p>
 
 <div>
+    <%= link_to "delete", task_path(@task), data:{
+            turbo_method: "delete", turbo_confirm: "Are you sure?"
+        } %>
+</div>
+
+<div>
     <%= link_to "Back", tasks_path %>
 </div>
