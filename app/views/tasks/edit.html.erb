@@ -1,4 +1,4 @@
-<h1>Edit Task</h1>
+
 
 <%= form_with model: @task, method: "patch" do |form| %>
 
@@ -13,11 +13,11 @@
 </div>
 
 <div>
-    <%= form.submit "Update" %>
+    <%= form.submit "更新", class: "button button--color_main" %>
 </div>
 
 <div>
-    <%= link_to "Back", tasks_path %>
+    <%= link_to "戻る", tasks_path, class: "button button--color_main" %>
 </div>
 
 <% end %>

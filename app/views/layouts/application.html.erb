@@ -6,11 +6,20 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
-    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", media: "all","data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <header class="header">
+      <div class="inner header__inner">
+        <h1 class="header__title">ToDo管理</h1>
+      </div>
+    </header>
+    <main class="main">
+      <div class="inner main__inner">
+        <%= yield %>
+      </div>
+    </main>
   </body>
 </html>
