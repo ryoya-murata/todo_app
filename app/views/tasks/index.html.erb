@@ -1,18 +1,18 @@
 
 <table class="todo__table todo-table">
-    <tr class="todo-table__row">
+    <tr class="todo-table__row todo-table__row--header">
         <th class="todo-table__header">タイトル</th>
         <th class="todo-table__header">内容</th>
         <th class="todo-table__header"></th>
     </tr>
     <% @tasks.each do |task| %>
-    <tr class="todo-table__row">
+    <tr class="todo-table__row todo-table__row--content">
         <td class="todo-table__data todo-table__data--title"><%= task.title %></td>
         <td class="todo-table__data todo-table__data--content"><%= task.content %></td>
         <td class="todo-table__data todo-table__data--button-wrapper">
             <%= link_to "詳細", task_path(task), class: "button button--color_main" %>
             <%= link_to "編集", edit_task_path(task), class: "button button--color_main" %>
-            <%= link_to "削除", task_path(task), class: "button button--color_main",data:{
+            <%= link_to "削除", task_path(task), class: "button button--color_attention",data:{
             turbo_method: "delete", turbo_confirm: "本当に削除しますか?"
         } %>
         </td>
