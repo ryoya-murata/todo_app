@@ -1,0 +1,107 @@
+// ====================
+//  読み込み
+// ====================
+
+// Bootstrap
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+// GoogleFonts
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+// FontAwesome
+@import 'font-awesome';
+
+
+// ====================
+//  変数
+// ====================
+
+:root {
+  --font-color: #333333;
+  --font-en: "Lato";
+}
+
+// ====================
+//  共通
+// ====================
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+a {
+  color: var(--font-color);
+  transition: opacity .3s;
+
+  &:hover {
+    color: var(--font-color);
+    opacity: .7;
+    text-decoration: none;
+  }
+}
+
+// ====================
+//  header
+// ====================
+
+header {
+  color: var(--font-color);
+  box-shadow: 0px 6px 8px -5px #777777;
+  margin-bottom: 100px;
+}
+
+.navbar {
+  padding: 8px 0;
+}
+
+.logo {
+  float: left;
+  padding-top: 9px;
+  font-size: 28px;
+  color: var(--font-color);
+  font-family: var(--font-en), sans-serif;
+  font-weight: 700;
+}
+
+// ====================
+//  Tasksテーブル
+// ====================
+
+.tasks-table {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.table > tbody > tr > th {
+  border-top: none;
+}
+
+.tasks-table__row {
+  border-bottom: 1px solid #9f9f9f;
+}
+
+.tasks-table__title {
+  font-size: 18px;
+}
+
+.tasks-table__data {
+  font-size: 16px;
+}
+
+.task-title-link {
+  display: block;
+}
+
+.task-link {
+  display: inline-block;
+  margin-right: 5px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  i {
+    font-size: 24px;  
+  }
+}

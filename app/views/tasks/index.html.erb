@@ -1,0 +1,29 @@
+<table class="tasks-table table">
+  <tbody>
+    <tr class="tasks-table__row">
+      <th class="tasks-table__title col-sm-4">タイトル</th>
+      <th class="tasks-table__title col-sm-6">コンテンツ</th>
+      <th class="tasks-table__title col-sm-2"></th>
+    </tr>
+
+    <% @tasks.each do |task| %>
+    <tr class="tasks-table__row">
+      <td class="tasks-table__data col-sm-4">
+        <%= link_to task.title, "#", class: "task-title-link" %>
+      </td>
+      <td class="tasks-table__data col-sm-6"><%= task.content %></td>
+      <td class="tasks-table__data col-sm-2">
+        <%= link_to root_path, class: "task-link task-link--info" do  %>
+          <i class="fa fa-info-circle" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to root_path, class: "task-link task-link--edit" do  %>
+          <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+        <% end %>
+        <%= link_to root_path, class: "task-link task-link--delete" do  %>
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        <% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
