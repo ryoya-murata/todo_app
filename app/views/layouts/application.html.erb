@@ -27,8 +27,10 @@
     </nav>
   </header>
 
-
   <div class="container">
+    <% flash.each do |message_type, message| %>
+      <p class="alert alert-<%= message_type %>"><%= message %></p>
+    <% end %>
     <%= yield %>
     <%= debug(params) if Rails.env.development? %>
   </div>

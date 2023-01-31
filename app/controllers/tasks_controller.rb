@@ -15,9 +15,11 @@ class TasksController < ApplicationController
 	def create
 		@task = Task.new(task_params)
 		if @task.save
+			flash[:success] = "登録に成功しました"
 			redirect_to root_path
 		else
-			render :new
+			flash.now[:danger] = "登録に失敗しました"
+			render :new, status: :unprocessable_entity
 		end
 	end
 

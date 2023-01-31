@@ -20,6 +20,7 @@
 :root {
   --font-color: #333333;
   --font-en: "Lato";
+  --danger-color: #DC3545;
 }
 
 // ====================
@@ -166,11 +167,11 @@ header {
   }
 
   &--delete {
-    border-color: red;
+    border-color: var(--danger-color);
 
     &:hover {
       color: #fff;
-      background-color: red;
+      background-color: var(--danger-color);
     }
   }
 
@@ -231,4 +232,12 @@ header {
     background: rgb(12, 89, 212);
     color: #fff;
   }
+}
+
+// ====================
+//  エラーメッセージ
+// ====================
+
+.error-list {
+  color: var(--danger-color);
 }
