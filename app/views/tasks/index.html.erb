@@ -12,7 +12,7 @@
         <%= link_to task.title, task_path(task), class: "task-title-link" %>
       </td>
       <td class="tasks-table__data col-sm-6"><%= task.content %></td>
-      <td class="tasks-table__data col-sm-2">
+      <td class="tasks-table__data task-table__links col-sm-2">
         <%= link_to task_path(task), class: "task-link task-link--info" do  %>
           <i class="fa fa-info-circle" aria-hidden="true"></i>
         <% end %>

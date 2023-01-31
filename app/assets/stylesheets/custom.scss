@@ -73,7 +73,7 @@ header {
   margin: 0 auto;
 }
 
-.table > tbody > tr > th {
+.table>tbody>tr>th {
   border-top: none;
 }
 
@@ -89,6 +89,10 @@ header {
   font-size: 16px;
 }
 
+.task-table__links {
+  text-align: center;
+}
+
 .task-title-link {
   display: block;
 }
@@ -102,7 +106,7 @@ header {
   }
 
   i {
-    font-size: 24px;  
+    font-size: 24px;
   }
 }
 
@@ -130,48 +134,101 @@ header {
   }
 }
 
-.task-links {
-  
-  .task-link {
-    display: inline-block;
-    font-size: 18px;
-    border: 1px solid;
-    border-radius: 4px;
-    padding: 4px 10px;
-    transition: all .3s;
 
-    &:not(:last-child) {
-      margin-right: 8px;
-    }
+.task-link {
+  display: inline-block;
+  font-size: 18px;
+  border: 1px solid;
+  border-radius: 4px;
+  padding: 4px 10px;
+  transition: all .3s;
 
-    &--back {
-      border-color: #000;
-
-      &:hover {
-        color: #fff;
-        background-color: #000;
-      }
-    }
-
-    &--edit {
-      border-color: rgb(177, 161, 43);
-
-      &:hover {
-        color: #fff;
-        background-color: rgb(177, 161, 43);
-      }
-    }
-
-    &--delete {
-      border-color: red;
-
-      &:hover {
-        color: #fff;
-        background-color: red;
-      }
-    }
-
-
+  &:not(:last-child) {
+    margin-right: 8px;
   }
 
+  &--back {
+    border-color: #000;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
+    }
+  }
+
+  &--edit {
+    border-color: rgb(177, 161, 43);
+
+    &:hover {
+      color: #fff;
+      background-color: rgb(177, 161, 43);
+    }
+  }
+
+  &--delete {
+    border-color: red;
+
+    &:hover {
+      color: #fff;
+      background-color: red;
+    }
+  }
+
+
+}
+
+
+// ====================
+//  Task作成画面
+// ====================
+
+.form {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form__item {
+  width: 100%;
+  text-align: center;
+
+  &:not(:last-child) {
+    margin: 0 0 30px;
+  }
+}
+
+.form__label {
+  display: block;
+  font-size: 20px;
+}
+
+.form__input {
+  width: 100%;
+  border: 1px solid #bbb;
+  padding: 4px 4px;
+  border-radius: 4px;
+}
+
+.form__textarea {
+  width: 100%;
+  border: 1px solid #bbb;
+  padding: 4px 4px;
+  height: 150px;
+  resize: none;
+  border-radius: 4px;
+}
+
+.form__submit {
+  display: inline-block;
+  font-size: 18px;
+  border: 1px solid rgb(12, 89, 212);
+  border-radius: 4px;
+  padding: 4px 10px;
+  background: transparent;
+  transition: all .3s;
+
+  &:hover {
+    opacity: 0.7;
+    background: rgb(12, 89, 212);
+    color: #fff;
+  }
 }
