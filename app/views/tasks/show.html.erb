@@ -1,0 +1,24 @@
+<dl class="task-detail">
+  <div class="task-detail__header">
+    <dt class="task-detail__title">
+      タイトル
+    </dt>
+    <dd class="task-detail__desc">
+      <%= @task.title %>
+    </dd>
+  </div>
+  <div class="task-detail__contents">
+    <dt class="task-detail__title">
+      詳細
+    </dt>
+    <dd class="task-detail__desc">
+      <%= @task.content %>
+    </dd>
+  </div>
+</dl>
+
+<div class="task-links">
+  <%= link_to "戻る", root_path, class: "task-link task-link--back" %>
+  <%= link_to "編集", root_path, class: "task-link task-link--edit" %>
+  <%= link_to "削除", root_path, class: "task-link task-link--delete" %>
+</div>

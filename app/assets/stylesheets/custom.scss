@@ -69,7 +69,7 @@ header {
 // ====================
 
 .tasks-table {
-  max-width: 800px;
+  // max-width: 800px;
   margin: 0 auto;
 }
 
@@ -104,4 +104,74 @@ header {
   i {
     font-size: 24px;  
   }
+}
+
+// ====================
+//  Task詳細画面
+// ====================
+
+.task-detail {
+
+  .task-detail__header {
+    margin-bottom: 40px;
+
+    .task-detail__desc {
+      font-size: 28px;
+    }
+  }
+
+  .task-detail__title {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .task-detail__desc {
+    font-size: 18px;
+  }
+}
+
+.task-links {
+  
+  .task-link {
+    display: inline-block;
+    font-size: 18px;
+    border: 1px solid;
+    border-radius: 4px;
+    padding: 4px 10px;
+    transition: all .3s;
+
+    &:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    &--back {
+      border-color: #000;
+
+      &:hover {
+        color: #fff;
+        background-color: #000;
+      }
+    }
+
+    &--edit {
+      border-color: rgb(177, 161, 43);
+
+      &:hover {
+        color: #fff;
+        background-color: rgb(177, 161, 43);
+      }
+    }
+
+    &--delete {
+      border-color: red;
+
+      &:hover {
+        color: #fff;
+        background-color: red;
+      }
+    }
+
+
+  }
+
 }
