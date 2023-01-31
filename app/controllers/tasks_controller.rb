@@ -13,11 +13,22 @@ class TasksController < ApplicationController
 	end
 
 	def create
-
+		@task = Task.new(task_params)
+		if @task.save
+			redirect_to root_path
+		else
+			render :new
+		end
 	end
 
 	def edit
 
 	end
+
+	private
+
+		def task_params
+			params.require(:task).permit(:title, :content)
+		end
 
 end
