@@ -21,6 +21,9 @@
   --font-color: #333333;
   --font-en: "Lato";
   --danger-color: #DC3545;
+  --back-color: #878E94;
+  --edit-color: #65ACE4;
+  --info-color: #27253B;
 }
 
 // ====================
@@ -139,8 +142,6 @@ header {
 .task-link {
   display: inline-block;
   font-size: 18px;
-  border: 1px solid;
-  border-radius: 4px;
   padding: 4px 10px;
   transition: all .3s;
 
@@ -148,30 +149,57 @@ header {
     margin-right: 8px;
   }
 
+  &--border {
+    border: 1px solid;
+    border-radius: 4px;
+  }
+
   &--back {
-    border-color: #000;
+    border-color: var(--back-color);
 
     &:hover {
       color: #fff;
-      background-color: #000;
+      background-color: var(--back-color);
+    }
+  }
+
+  &--info {
+    border-color: var(--info-color);
+    color: var(--info-color);
+
+    &:hover {
+      color: #fff;
+      background-color: var(--info-color);
     }
   }
 
   &--edit {
-    border-color: rgb(177, 161, 43);
+    border-color: var(--edit-color);
+    color: var(--edit-color);
 
     &:hover {
       color: #fff;
-      background-color: rgb(177, 161, 43);
+      background-color: var(--edit-color);
     }
   }
 
   &--delete {
     border-color: var(--danger-color);
+    color: var(--danger-color);
 
     &:hover {
       color: #fff;
       background-color: var(--danger-color);
+    }
+  }
+
+  &--new {
+    border: 1px solid #000;
+    border-radius: 0;
+
+    &:hover {
+      color: #fff;
+      background-color: #000;
     }
   }
 

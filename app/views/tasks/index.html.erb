@@ -3,7 +3,7 @@
   <tbody>
     <tr class="tasks-table__row">
       <th class="tasks-table__title col-sm-4">タイトル</th>
-      <th class="tasks-table__title col-sm-6">コンテンツ</th>
+      <th class="tasks-table__title col-sm-6">詳細</th>
       <th class="tasks-table__title col-sm-2"></th>
     </tr>
 
@@ -20,7 +20,7 @@
         <%= link_to root_path, class: "task-link task-link--edit" do  %>
           <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
         <% end %>
-        <%= link_to root_path, class: "task-link task-link--delete" do  %>
+        <%= link_to task, class: "task-link task-link--delete", data: {"turbo-method": :delete, turbo_confirm: "削除しますか？"} do  %>
           <i class="fa fa-trash" aria-hidden="true"></i>
         <% end %>
       </td>
