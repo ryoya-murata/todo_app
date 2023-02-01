@@ -15,10 +15,10 @@ class TasksController < ApplicationController
 	def create
 		@task = Task.new(task_params)
 		if @task.save
-			flash[:success] = "登録に成功しました"
+			flash[:success] = "「#{@task.title}」を登録しました"
 			redirect_to root_path
 		else
-			flash.now[:danger] = "登録に失敗しました"
+			flash.now[:danger] = "「#{@task.title}」の登録に失敗しました"
 			render :new, status: :unprocessable_entity
 		end
 	end
@@ -42,6 +42,14 @@ class TasksController < ApplicationController
 		Task.find(params[:id]).destroy
 		flash[:success] = "削除しました"
 		redirect_to root_path, status: :see_other
+	end
+
+	def done
+		@task = Task.find(params[:id])
+		# @task.done = true
+		@task.update(done: true)
+		flash[:success] = "「#{@task.title}」を完了！"
+		redirect_to root_path
 	end
 
 	private

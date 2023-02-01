@@ -2,18 +2,24 @@
 <table class="tasks-table table">
   <tbody>
     <tr class="tasks-table__row">
-      <th class="tasks-table__title col-sm-4">タイトル</th>
-      <th class="tasks-table__title col-sm-6">詳細</th>
-      <th class="tasks-table__title col-sm-2"></th>
+      <th class="tasks-table__title col-md-4">タイトル</th>
+      <th class="tasks-table__title col-md-5">詳細</th>
+      <th class="tasks-table__title col-md-3"></th>
     </tr>
 
     <% @tasks.each do |task| %>
-    <tr class="tasks-table__row">
-      <td class="tasks-table__data col-sm-4">
+    <% now_status = "done" if task.done %>
+    <tr class="tasks-table__row <%= now_status %>">
+      <td class="tasks-table__data col-md-4">
         <%= link_to task.title, task_path(task).truncate(30), class: "task-title-link" %>
       </td>
-      <td class="tasks-table__data col-sm-5"><%= task.content.truncate(100)  %></td>
-      <td class="tasks-table__data task-table__links col-sm-3">
+      <td class="tasks-table__data col-md-5"><%= task.content.truncate(100)  %></td>
+      <td class="tasks-table__data task-table__links col-md-3">
+        <% if !task.done %>
+          <%= button_to done_path(task), method: :post, class: "task-link task-link--done" do%>
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
+          <% end %>
+        <% end %>
         <%= link_to task_path(task), class: "task-link task-link--info" do  %>
           <i class="fa fa-info-circle" aria-hidden="true"></i>
         <% end %>

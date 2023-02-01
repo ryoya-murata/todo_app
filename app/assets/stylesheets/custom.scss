@@ -24,6 +24,7 @@
   --back-color: #878E94;
   --edit-color: #65ACE4;
   --info-color: #27253B;
+  --done-color: #23a338;
 }
 
 // ====================
@@ -49,6 +50,16 @@ a {
     text-decoration: none;
     color: inherit;
   }
+}
+
+button {
+  border: none;
+  background: none;
+  display: inline-block;
+}
+
+form.button_to {
+  display: inline-block;
 }
 
 .navbar-nav > li > a:hover {
@@ -95,7 +106,13 @@ header {
 
 .tasks-table__row {
   border-bottom: 1px solid #9f9f9f;
+
+  &.done {
+    background: #efefef;
+  }
 }
+
+
 
 .tasks-table__title {
   font-size: 18px;
@@ -106,7 +123,7 @@ header {
 }
 
 .task-table__links {
-  text-align: center;
+  text-align: right;
 }
 
 .task-title-link {
@@ -212,6 +229,16 @@ header {
     &:hover {
       color: #fff;
       background-color: #000;
+    }
+  }
+
+  &--done {
+    border-color: var(--done-color);
+    color: var(--done-color);
+
+    &:hover {
+      color: #fff;
+      background-color: var(--done-color);
     }
   }
 
