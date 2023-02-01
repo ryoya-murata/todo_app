@@ -19,6 +19,6 @@
 
 <div class="task-links">
   <%= link_to "戻る", root_path, class: "task-link task-link--back task-link--border" %>
-  <%= link_to "編集", root_path, class: "task-link task-link--edit task-link--border" %>
-  <%= link_to "削除", root_path, class: "task-link task-link--delete task-link--border" %>
+  <%= link_to "編集", edit_task_path, class: "task-link task-link--edit task-link--border" %>
+  <%= link_to "削除", @task, class: "task-link task-link--delete task-link--border", data: {"turbo-method": :delete, turbo_confirm: "削除しますか？"}  %>
 </div>

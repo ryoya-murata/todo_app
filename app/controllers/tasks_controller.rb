@@ -34,7 +34,7 @@ class TasksController < ApplicationController
 			redirect_to root_path
 		else
 			flash.now[:danger] = "タスクの編集に失敗しました"
-			render :edit
+			render :edit, status: :unprocessable_entity
 		end
 	end
 
