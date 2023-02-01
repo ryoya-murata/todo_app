@@ -1,7 +1,7 @@
 class TasksController < ApplicationController
 
 	def index
-		@tasks = Task.all
+		@tasks = Task.all.page(params[:page]).per(2)
 	end
 
 	def show
@@ -24,7 +24,18 @@ class TasksController < ApplicationController
 	end
 
 	def edit
+		@task = Task.find(params[:id])
+	end
 
+	def update
+		@task = Task.find(params[:id])
+		if @task.update(task_params)
+			flash[:success] = "タスクを更新しました"
+			redirect_to root_path
+		else
+			flash.now[:danger] = "タスクの編集に失敗しました"
+			render :edit
+		end
 	end
 
 	def destroy

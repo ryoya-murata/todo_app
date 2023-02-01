@@ -17,7 +17,7 @@
         <%= link_to task_path(task), class: "task-link task-link--info" do  %>
           <i class="fa fa-info-circle" aria-hidden="true"></i>
         <% end %>
-        <%= link_to root_path, class: "task-link task-link--edit" do  %>
+        <%= link_to edit_task_path(task), class: "task-link task-link--edit" do  %>
           <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
         <% end %>
         <%= link_to task, class: "task-link task-link--delete", data: {"turbo-method": :delete, turbo_confirm: "削除しますか？"} do  %>
@@ -28,3 +28,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @tasks, theme: 'twitter-bootstrap-4' %>

@@ -269,3 +269,39 @@ header {
 .error-list {
   color: var(--danger-color);
 }
+
+// ====================
+//  ページネーション
+// ====================
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+/*ページネーション自体のデザイン*/
+.pagination>li>a {          
+  border: none;    
+  color: #696969;
+}
+
+.pagination>.active>a {     
+  background: #000; 
+  color: #fff;
+  border-radius: 50%; 
+  line-height: 32px;
+  display: inline-block;
+  text-align: center;
+  width: 32px;  
+  padding: 0;
+  margin: 0 5px;
+  pointer-events: none;
+}
+
+.pagination>li>a:hover {        
+  border-radius: 15px; 
+}
+
+.pagination > li:first-child > a, .pagination > li:last-child > a {
+  border-radius: 50%;
+}
