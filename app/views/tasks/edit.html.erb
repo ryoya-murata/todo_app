@@ -10,7 +10,7 @@
       <%= f.text_area :content, class: "form__textarea" %>
     </div>
     <div class="form__item">
-      <%= link_to "戻る", root_path, class: "task-link task-link--back task-link--border" %>
+      <%= link_to("戻る", :back, class: "task-link task-link--back task-link--border") %>
       <%= f.submit "更新", class: "form__submit" %>
     </div>
   <% end %>
