@@ -10,10 +10,10 @@
     <% @tasks.each do |task| %>
     <tr class="tasks-table__row">
       <td class="tasks-table__data col-sm-4">
-        <%= link_to task.title, task_path(task), class: "task-title-link" %>
+        <%= link_to task.title, task_path(task).truncate(30), class: "task-title-link" %>
       </td>
-      <td class="tasks-table__data col-sm-6"><%= task.content %></td>
-      <td class="tasks-table__data task-table__links col-sm-2">
+      <td class="tasks-table__data col-sm-5"><%= task.content.truncate(100)  %></td>
+      <td class="tasks-table__data task-table__links col-sm-3">
         <%= link_to task_path(task), class: "task-link task-link--info" do  %>
           <i class="fa fa-info-circle" aria-hidden="true"></i>
         <% end %>
