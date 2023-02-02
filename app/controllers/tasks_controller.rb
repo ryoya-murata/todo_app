@@ -49,7 +49,9 @@ class TasksController < ApplicationController
 		# @task.done = true
 		@task.update(done: true)
 		flash[:success] = "「#{@task.title}」を完了！"
-		redirect_to root_path
+		current_page = params[:page]
+		puts "AAAAAAAAAAAAA#{current_page}"
+		redirect_to tasks_path(page: current_page)
 	end
 
 	private
